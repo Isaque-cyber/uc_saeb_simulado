@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
+const pool = require("./config/database");
 
 const app = express();
 
@@ -30,6 +31,15 @@ app.get("/", (req, res) => {
 });
 
 const PORT = 3000;
+
+pool.getConnection()
+  .then((connection) => {
+    console.log("MySQL conectado com sucesso!");
+    connection.release();
+  })
+  .catch((error) => {
+    console.error("Erro ao conectar ao MySQL:", error.message);
+  });
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);

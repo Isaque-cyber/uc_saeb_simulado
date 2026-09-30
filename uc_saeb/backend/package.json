@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
-"scripts": {
-  "dev": "node --watch src/server.js",
-  "start": "node src/server.js"
-}
-
-,
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +17,6 @@
     "dotenv": "^18.0.4",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
-    "pg": "^8.23.0"
+    "mysql2": "^3.24.5"
   }
 }
